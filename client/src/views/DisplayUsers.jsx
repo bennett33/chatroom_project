@@ -21,7 +21,8 @@ const DisplayUsers = () => {
 
     return (
         <div>
-            <button onClick={logoutHandler}>Logout</button>
+            <button className="btn btn-warning" onClick={logoutHandler}>Logout</button>
+            <h4 className="text-center"><Link to={`/chat/`}>Chat</Link></h4>  
 
             <table>
                 <thead>

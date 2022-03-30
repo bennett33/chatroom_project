@@ -26,14 +26,14 @@ UserSchema.virtual('confirmPassword')
     .get( () => this.confirmPassword)
     .set( value => this.confirmPassword = value );
 
-UserSchema.pre('validate', function(next){
-    console.log(this.password)
-    console.log(this.get('confirmPassword'))
-        if(this.password !== this.get('confirmPassword')){
-            this.invalidate('confirmPassword', 'Password must match confirm password')
-        }
-        next()
-    });
+// UserSchema.pre('validate', function(next){
+//     console.log(this.password)
+//     console.log(this.get('confirmPassword'))
+//         if(this.password !== this.get('confirmPassword')){
+//             this.invalidate('confirmPassword', 'Password must match confirm password')
+//         }
+//         next()
+//     });
 
 UserSchema.pre('save', function(next){
     bcrypt.hash(this.password, 10)

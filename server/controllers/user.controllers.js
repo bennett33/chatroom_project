@@ -36,7 +36,7 @@ module.exports.register = (req, res)=>{
                 .json({msg: "success", user:user});
         })
         .catch(err => {
-            console.log("in err")
+            console.log(err)
             res.status(400).json(err)
         }); 
 }

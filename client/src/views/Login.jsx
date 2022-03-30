@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios"
+import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
@@ -38,7 +39,7 @@ const Login = () => {
                     <input className="ms-2" type="password" name="password" value={user.password} onChange={changeHandler} />
                 </div>
 
-                <button className="btn btn-primary mt-2 ms-2"> Login </button>
+                <button className="btn btn-primary mt-2 ms-2">Login</button>
             </form>
         </div>
     )
