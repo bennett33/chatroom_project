@@ -56,7 +56,6 @@ const Register = () => {
                 </div>
                 <button className="btn btn-primary mt-2 ms-2"> Register </button>
             </form>
-            <h4 className="text-center"><Link to={`/login/`}>Log In</Link></h4>  
         </div>
     )
 }

@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 
 
 
-const Chat2 = () => {
+const Chat3 = () => {
 
 const [input, setInput] = useState("");
 
@@ -22,7 +22,7 @@ const onSubmitHandler = (e) => {
 
 e.preventDefault();
 
-socket.emit("chat2", {chatName: chatName, content:input});
+socket.emit("chat3", {chatName: chatName, content:input});
 
 setInput("")
 
@@ -33,7 +33,7 @@ useEffect(() => {
 
 // listen from server
 
-socket.on("post chat2", (msg2) => {
+socket.on("post chat3", (msg2) => {
 
 
 setMessages(prevMsgState => [...prevMsgState, msg2])
@@ -93,7 +93,7 @@ return (
 
 {
 
-messages.map((msg2, i) => (<p key={i}><span className="text-primary">{msg2.chatName}:</span> {msg2.content}</p>))
+messages.map((msg3, i) => (<p key={i}><span className="text-primary">{msg3.chatName}:</span> {msg3.content}</p>))
 
 }
 
@@ -110,4 +110,4 @@ messages.map((msg2, i) => (<p key={i}><span className="text-primary">{msg2.chatN
 }
 
 
-export default Chat2;
+export default Chat3;

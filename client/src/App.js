@@ -7,6 +7,7 @@ import Login from './views/Login';
 import Cookie from './views/Cookie';
 import Chat from './views/Chat';
 import Chat2 from './views/Chat2';
+import Chat3 from './views/Chat3';
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
           </Route>  
           <Route exact path="/chat2">
             <Chat2 />
+          </Route>
+          <Route exact path="/chat3">
+            <Chat3 />
           </Route> 
         </Switch>
       </BrowserRouter>

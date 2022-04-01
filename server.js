@@ -30,13 +30,50 @@ const io = require('socket.io')(server, { cors: true });
 
 
 io.on("connection", socket => {
+
     console.log(socket.id);
+    
+    
+    // listen for a client event
+    
+    socket.on("chat", (client_input) => {
+    
+    console.log("got a message", client_input);
+    
+    
+    // emit this back to the client / everyone
+    
+    io.emit('post chat', client_input)
+    
+    }),
+    
+    
+    
+    // listen for a client event
+    
+    socket.on("chat2", (client_input) => {
+    
+    console.log("got a message", client_input);
+    
+    
+    // emit this back to the client / everyone
+    
+    io.emit('post chat2', client_input)
+    
+    }),
 
     // listen for a client event
-    socket.on("chat", (client_input) => {
+    
+    socket.on("chat3", (client_input) => {
+    
         console.log("got a message", client_input);
-
+        
+        
         // emit this back to the client / everyone
-        io.emit('post chat', client_input)
-    });
+        
+        io.emit('post chat3', client_input)
+        
+        })
+
+
 });

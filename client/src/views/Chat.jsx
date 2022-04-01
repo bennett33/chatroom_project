@@ -6,6 +6,7 @@ const Chat = () => {
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([])
     const [chatName, setChatName] = useState("")
+    const [room, setRoom] = useState("")
     const [approve, setApprove] = useState(false)
 
     const [socket] = useState(() => io(':8000'));
@@ -36,6 +37,11 @@ const Chat = () => {
     return (
         <div>
             <h1>Adam 2 Adam Chat</h1>
+            <div>
+                {
+                    messages.map((msg, i) => (<p key={i}><span className="text-primary">{msg.chatName}:</span> {msg.content}</p>))
+                }
+            </div>
             {
                 !approve?
                     <form onSubmit={chatNameHandler}>
@@ -44,18 +50,13 @@ const Chat = () => {
                         <button className="btn btn-primary ms-2 mb-2"> Enter chat</button>
                     </form> :
                     <>
-                        <form onSubmit={onSubmitHandler}>
+                        <form class onSubmit={onSubmitHandler}>
                             <input type="text" name='msg' onChange={(e) => setInput(e.target.value)} value={input} />
                             <button className="btn btn-primary ms-2 mb-2">Send</button>
                         </form>
-                        <div>
-                            {
-                                messages.map((msg, i) => (<p key={i}><span className="text-primary">{msg.chatName}:</span> {msg.content}</p>))
-                            }
-                        </div>
                     </>
             }
-    </div>
+        </div>
     );
 }
 
