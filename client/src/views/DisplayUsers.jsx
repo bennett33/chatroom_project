@@ -21,12 +21,12 @@ const DisplayUsers = () => {
 
     return (
         <div>
-            <button className="btn btn-warning mt-3 mb-3" onClick={logoutHandler}>Logout</button>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center mt-3">
                 <h4 className="text-center"><Link to={`/chat/`}>Lounge</Link></h4>
                 <h4 className="text-center ms-3"><Link to={`/chat2/`}>Study Room</Link></h4>
                 <h4 className="text-center ms-3"><Link to={`/chat3/`}>Another Room</Link></h4>      
             </div>
+            <button className="btn btn-warning mt-3 mb-3" onClick={logoutHandler}>Logout</button>
 
             {/* <table>
                 <thead>
